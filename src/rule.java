@@ -56,7 +56,7 @@ class rule{
         String s;
         
         try{
-        Document doc = Jsoup.connect("http://rule34.paheal.net/post/list/"+searchstring+"/"+i).get();
+        Document doc = Jsoup.connect("http://site.com/post/list/"+searchstring+"/"+i).get();
             
 		Element paginator = doc.getElementById("paginator");
 		Elements pglinks = paginator.select("a");
@@ -83,7 +83,7 @@ class rule{
 		for (i=1; i<=n; i++)
 		try{
 		DefaultHttpClient httpclient = new DefaultHttpClient();
-		Document doc = Jsoup.connect("http://rule34.paheal.net/post/list/"+searchstring+"/"+i).get();
+		Document doc = Jsoup.connect("http://site.com/post/list/"+searchstring+"/"+i).get();
 				
         Elements elts = doc.getElementsByClass("thumb");
         Elements links = elts.select("a");
@@ -114,7 +114,7 @@ class rule{
     	    response = httpclient.execute(httpget);
     	    
     	    istream = response.getEntity().getContent();
-    	    file = new File("f:/Track No01/Hentai - Art - Pencil/"+storepath+"/" + imgname + picovrwrtprotect +".jpg");
+    	    file = new File("f:/images/"+storepath+"/" + imgname + picovrwrtprotect +".jpg");
     	    picovrwrtprotect++;
     	    ostream = new FileOutputStream(file, true);
     	 
@@ -320,7 +320,7 @@ class rule{
 	        catch(Exception e){System.err.println(e.toString());}
 	              
 	        System.out.println("No. of pages is "+n);
-	        System.out.println("http://rule34.paheal.net/post/list/"+searchstring+"/"+i);
+	        System.out.println("http://site.com/post/list/"+searchstring+"/"+i);
 	        if(n==0){searchfailed = true;
 	        System.err.println("Sorry, the search string did not return any result!");
 	        //throw new Exception();
